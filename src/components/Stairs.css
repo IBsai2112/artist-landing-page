@@ -1,0 +1,15 @@
+.stairs {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 999;
+}
+
+.stair {
+  flex: 1;
+  background: #413839;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+}

@@ -1,181 +1,108 @@
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
   width: 100%;
-  background-color: #a78268b0;
+  height: 100%;
+  background-color: #a78268;
   font-family: "Teko", sans-serif;
+}
+
+/* PAGE WRAPPER */
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* MAIN CONTAINER */
 #main {
-  display: flex;
-  height: 80%;
   width: 80%;
-  background-color: #413839b3;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  height: 80%;
+  max-width: 1200px;
+  max-height: 700px;
+  background-color: #413839;
+  display: flex;
+  position: relative;
   overflow: hidden;
 }
 
 /* PARTS */
-#part1 {
-  height: 100%;
-  width: 26%;
-}
-
+#part1 { width: 26%; }
 #part2 {
-  height: 100%;
   width: 68%;
   background-image: url("https://www.tamilstar.com/wp-content/uploads/2022/12/Fj6PUWBacAArBzE-1.jpg");
   background-size: cover;
   background-position: center;
-  animation: fadeIn 1.5s ease forwards;
-  opacity: 0;
 }
+#part3 { width: 8%; }
 
 #overlay {
   width: 100%;
   height: 100%;
-  background-color: #ab8f9730;
+  background: rgba(171, 143, 151, 0.2);
 }
 
-#part3 {
-  height: 100%;
-  width: 8%;
-}
-
-/* NAV (FIXED LIKE ORIGINAL SITE) */
+/* NAV */
 #nav {
   position: absolute;
-  width: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  left: 10%;
   top: 5%;
-  z-index: 20;
-  opacity: 0;
-  animation: navDrop 1s ease forwards;
+  left: 8%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: white;
 }
 
 #nav img {
-  height: 120px;
-  opacity: 0.75; /* toned down so text is visible */
+  height: 80px;
 }
 
-#nav h5 {
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.95);
-  text-transform: uppercase;
-  position: relative;
-  z-index: 21; /* ABOVE image */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); /* readability */
-}
-
-/* CENTER TEXT */
+/* TEXT */
 #text-div {
   position: absolute;
-  width: 600px;
   left: 5%;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
 }
 
 #text-div h1 {
-  font-size: 95px;
-  font-weight: 900;
-  letter-spacing: 8px;
-  color: white;
+  font-size: 90px;
+  line-height: 80px;
   text-transform: uppercase;
-  line-height: 75px;
-  opacity: 0;
-  animation: slideIn 1s ease forwards;
+  color: white;
 }
 
-#text-div h1:nth-child(1) { animation-delay: 0.2s; }
-#text-div h1:nth-child(2) { animation-delay: 0.4s; }
-#text-div h1:nth-child(3) { animation-delay: 0.6s; }
-#text-div h1:nth-child(4) { animation-delay: 0.8s; }
-
-/* SMALL IMAGE */
+/* IMAGE */
 #smallImageDiv {
-  height: 400px;
-  width: 300px;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 280px;
+  height: 380px;
   background-image: url("https://static.toiimg.com/thumb/msid-92345308,width-960,height-1280,resizemode-6.cms");
   background-size: cover;
   background-position: center;
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  transform: translate(0, -50%) scale(0.8);
-  opacity: 0;
-  animation: zoomIn 1.2s ease forwards;
-  animation-delay: 1s;
 }
 
 /* VERTICAL TEXT */
 #verticalText {
   position: absolute;
-  transform: rotate(90deg);
-  right: -44%;
+  right: -45%;
   top: 5%;
-  transform-origin: 0% 0%;
+  transform: rotate(90deg);
 }
 
 #verticalText h1 {
-  font-size: 50px;
-  font-weight: 900;
-  text-transform: uppercase;
+  font-size: 48px;
   letter-spacing: 6px;
   color: transparent;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: white;
-}
-
-/* ANIMATIONS */
-@keyframes slideIn {
-  from {
-    transform: translateX(-60px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  to {
-    transform: translate(0, -50%) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes navDrop {
-  from {
-    transform: translateY(-30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+  -webkit-text-stroke: 2px white;
 }
