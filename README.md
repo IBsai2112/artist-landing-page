@@ -1,11 +1,36 @@
-# Getting Started with Create React App
+## ✨ GSAP Stairs Page Transition Animation
+This project includes a **custom page transition animation** built using **GSAP (GreenSock Animation Platform)**.  
+The animation creates a **“stairs” or “shutter” effect** that smoothly covers the screen during page load or route change, then reveals the content.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🔧 How the Stairs Animation Works
 
-## Available Scripts
+- The animation is implemented inside a reusable **`Stairs` component**
+- Five vertical panels (`.stair`) cover the full screen
+- GSAP animates these panels in sequence:
+  1. **Stairs appear from top to bottom**
+  2. **Each panel slides down (staggered)**
+  3. **Panels exit the screen**
+  4. **Page content fades in smoothly**
 
-In the project directory, you can run:
+### 🧠 Key Technologies Used
+- **GSAP** – for timeline-based animations
+- **@gsap/react (`useGSAP`)** – GSAP integration with React lifecycle
+- **React Router (`useLocation`)** – triggers animation on route changes
+- **CSS Flexbox** – to structure the stair panels
 
+### 🎬 Animation Flow (GSAP Timeline)
+- Show stairs container
+- Animate stair height from `0 → 100%`
+- Move stairs vertically out of the viewport
+- Hide stairs container
+- Fade in and scale page content
+
+This approach ensures:
+- No animation flicker
+- Clean separation of layout and animation
+- Smooth, premium-looking transitions similar to modern editorial or Awwwards-style websites
+
+---
 ### `npm start`
 
 Runs the app in the development mode.\
